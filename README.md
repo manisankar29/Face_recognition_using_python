@@ -37,7 +37,7 @@ The code is divided into the following sections:
 
 Importing the required Python libraries, including `face_recognition`, `numpy`, `Pillow`, and `IPython.display`.
 
-```bash
+```python
 import face_recognition
 import numpy as np
 from PIL import Image, ImageDraw
@@ -48,7 +48,7 @@ from IPython.display import display
 
 Loading known faces and their encodings from image files. You can add more known faces by extending the `known_face_encodings` and `known_face_names` lists.
 
-```bash
+```python
 face_1 = face_recognition.load_image_file("bill.jpg")
 face_1_encoding = face_recognition.face_encodings(face_1)[0]
 
@@ -74,7 +74,7 @@ known_face_names = [
 
 Loading the image in which you want to recognize faces. Ensure this image is named "unknown.jpg".
 
-```bash
+```python
 unknown_image = face_recognition.load_image_file("unknown.jpg")
 ```
 
@@ -82,7 +82,7 @@ unknown_image = face_recognition.load_image_file("unknown.jpg")
 
 Detecting faces in the unknown image, comparing their encodings with the known faces, and assigning names to recognized faces.
 
-```bash
+```python
 face_locations = face_recognition.face_locations(unknown_image)
 face_encodings = face_recognition.face_encodings(unknown_image, face_locations)
 
@@ -110,7 +110,7 @@ for (top, right, bottom, left), face_encoding in zip(face_locations, face_encodi
 
 Drawing rectangles around recognized faces and displaying the image with labels.
 
-```bash
+```python
 del draw
 
 display(pil_image)
@@ -118,3 +118,24 @@ display(pil_image)
 
 ## Example Output
 
+![Screenshot 2023-10-22 025259](https://github.com/manisankar29/Face_recognition/assets/138246745/46c2699a-9cb1-40ea-9749-fbf9116a27ee)
+
+## Note
+
+- The accuracy of face recognition depends on the quality and diversity of known face images. It may not be perfect in all cases.
+- Ensure that the image file paths and names are correctly specified in the code.
+
+Feel free to modify the code to suit your needs and add more individuals to the known faces list for recognition.
+
+Enjoy using the face recognition script!
+
+If you encounter any issues or have questions, feel free to reach out for assistance.
+
+```vbnet
+
+You can include this README.md file in your project's repository, and it will serve as a guide for users who want to use the provided face recognition code.
+```
+
+## License
+
+[MIT License](LICENSE)
