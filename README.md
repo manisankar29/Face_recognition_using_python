@@ -37,7 +37,7 @@ The code is divided into the following sections:
 
 Importing the required Python libraries, including `face_recognition`, `numpy`, `Pillow`, and `IPython.display`.
 
-```python
+```bash
 import face_recognition
 import numpy as np
 from PIL import Image, ImageDraw
@@ -48,7 +48,7 @@ from IPython.display import display
 
 Loading known faces and their encodings from image files. You can add more known faces by extending the `known_face_encodings` and `known_face_names` lists.
 
-```python
+```bash
 face_1 = face_recognition.load_image_file("bill.jpg")
 face_1_encoding = face_recognition.face_encodings(face_1)[0]
 
@@ -74,7 +74,7 @@ known_face_names = [
 
 Loading the image in which you want to recognize faces. Ensure this image is named "unknown.jpg".
 
-```python
+```bash
 unknown_image = face_recognition.load_image_file("unknown.jpg")
 ```
 
@@ -82,7 +82,7 @@ unknown_image = face_recognition.load_image_file("unknown.jpg")
 
 Detecting faces in the unknown image, comparing their encodings with the known faces, and assigning names to recognized faces.
 
-```python
+```bash
 face_locations = face_recognition.face_locations(unknown_image)
 face_encodings = face_recognition.face_encodings(unknown_image, face_locations)
 
@@ -110,7 +110,7 @@ for (top, right, bottom, left), face_encoding in zip(face_locations, face_encodi
 
 Drawing rectangles around recognized faces and displaying the image with labels.
 
-```python
+```bash
 del draw
 
 display(pil_image)
